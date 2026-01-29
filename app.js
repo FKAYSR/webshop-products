@@ -314,6 +314,8 @@ function displayProduct(product) {
     stockClass = "out-of-stock";
   }
 
+  const stock = getStockStatus(product.inStock);
+
   // lav HTML
   const html = /*html*/ `
   <article class="product-card">
@@ -321,7 +323,7 @@ function displayProduct(product) {
     <div class="product-info">
       <h2 class="product-title">${product.title}</h2>
       <p class="product-description">
-        ${product.description}
+        ${getExcerpt(product.description)}
       </p>
       <p class="product-price">$${product.price}</p>
       <span class="product-stock ${stockClass}">${stockText}</span>
@@ -331,3 +333,32 @@ function displayProduct(product) {
   // indsæt i DOM
   document.querySelector("#productGrid").insertAdjacentHTML("beforeend", html);
 }
+
+const testProduct = products[0];
+getExcerpt(testProduct.description);
+console.log(testProduct);
+console.log(testProduct.description.substring(0, 60));
+
+const excerpt = testProduct.description.substring(0, 60);
+console.log(excerpt);
+
+function getExcerpt(text) {
+  const excerpt = text.substring(0, 50) + "...";
+  console.log(excerpt);
+  return excerpt;
+}
+
+function getStockStatus(inStock) {
+  if (inStock) {
+    return {
+      text: "På lager",
+      class: "in-stock"
+    };
+  } else {
+    return {
+      text: "Udsolgt",
+      class: "out-of-stock"
+    };
+  }
+}
+
