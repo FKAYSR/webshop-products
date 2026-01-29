@@ -73,7 +73,7 @@
 
 // }
 //#endregion
-"use strict";
+
 // Event listener - starter appen når siden er loaded
 document.addEventListener("DOMContentLoaded", initApp);
 
@@ -323,7 +323,8 @@ function displayProduct(product) {
     <div class="product-info">
       <h2 class="product-title">${product.title}</h2>
       <p class="product-description">
-        ${getExcerpt(product.description)}
+        ${//getExcerpt
+        product.description}
       </p>
       <p class="product-price">$${product.price}</p>
       <span class="product-stock ${stockClass}">${stockText}</span>
