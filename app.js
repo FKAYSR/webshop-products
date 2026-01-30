@@ -78,8 +78,8 @@
 document.addEventListener("DOMContentLoaded", initApp);
 
 // Data - produkter
-import {products} from "./data.js";
-import {getExcerpt, getStockStatus} from "./helpers.js";
+import { products } from "./data.js";
+import { getExcerpt, getStockStatus } from "./helpers.js";
 
 // Initialize app
 function initApp() {
@@ -114,8 +114,10 @@ function displayProduct(product) {
     <div class="product-info">
       <h2 class="product-title">${product.title}</h2>
       <p class="product-description">
-        ${//getExcerpt
-        product.description}
+        ${
+          //getExcerpt
+          product.description
+        }
       </p>
       <p class="product-price">$${product.price}</p>
       <span class="product-stock ${stock.class}">${stock.text}</span>
@@ -138,9 +140,8 @@ console.log(excerpt);
 // const doubled = numbers.map(num => num * 2);
 // console.log(doubled); // [2, 4, 6, 8, 10]
 
-const titles = products.map(product => product.title);
+const titles = products.map((product) => product.title);
 console.log(titles);
 
-const prices = products.map(product => product.price);
+const prices = products.map((product) => product.price);
 console.log(prices);
-
