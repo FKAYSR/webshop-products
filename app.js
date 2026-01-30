@@ -87,16 +87,21 @@ function initApp() {
   displayAllProducts();
 }
 
+// function displayAllProducts() {
+//   // ryd grid
+//   document.querySelector("#productGrid").innerHTML = "";
+//   // loop gennem products
+//   for (const product of products) {
+//     // kald displayProduct for hvert produkt
+//     displayProduct(product);
+//   }
+// }
+
 // Vis alle produkter
-function displayAllProducts() {
-  // ryd grid
+const displayAllProducts = () => {
   document.querySelector("#productGrid").innerHTML = "";
-  // loop gennem products
-  for (const product of products) {
-    // kald displayProduct for hvert produkt
-    displayProduct(product);
-  }
-}
+  products.forEach(displayProduct);
+};
 
 // Vis ét produkt
 function displayProduct(product) {
