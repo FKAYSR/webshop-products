@@ -140,3 +140,7 @@ console.log(excerpt);
 
 const titles = products.map(product => product.title);
 console.log(titles);
+
+const prices = products.map(product => product.price);
+console.log(prices);
+
