@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", initApp);
 
 // Data - produkter
 import {products} from "./data.js";
+import {getExcerpt, getStockStatus} from "./helpers.js";
 
 // Initialize app
 function initApp() {
@@ -140,24 +141,4 @@ console.log(testProduct.description.substring(0, 60));
 
 const excerpt = testProduct.description.substring(0, 60);
 console.log(excerpt);
-
-function getExcerpt(text) {
-  const excerpt = text.substring(0, 50) + "...";
-  console.log(excerpt);
-  return excerpt;
-}
-
-function getStockStatus(inStock) {
-  if (inStock) {
-    return {
-      text: "På lager",
-      class: "in-stock"
-    };
-  } else {
-    return {
-      text: "Udsolgt",
-      class: "out-of-stock"
-    };
-  }
-}
 
