@@ -134,22 +134,9 @@ console.log(testProduct.description.substring(0, 60));
 const excerpt = testProduct.description.substring(0, 60);
 console.log(excerpt);
 
-// Traditionel
-function add(a, b) {
-  return a + b;
-}
-console.log(add(5, 3));
+// const numbers = [1, 2, 3, 4, 5];
+// const doubled = numbers.map(num => num * 2);
+// console.log(doubled); // [2, 4, 6, 8, 10]
 
-// Arrow function
-const addArrow = (a, b) => a + b;
-console.log(addArrow(5, 3));
-
-// Traditionel
-function square(x) {
-  return x * x;
-}
-console.log(square(4));
-
-// Arrow function (kort syntaks)
-const squareArrow = x => x * x; // Parenteser kan droppes ved ét parameter
-console.log(squareArrow(4));
+const titles = products.map(product => product.title);
+console.log(titles);
