@@ -105,19 +105,6 @@ const displayAllProducts = () => {
 
 // Vis ét produkt
 function displayProduct(product) {
-  // tjek lagerstatus
-  let stockText; // tekst til lagerstatus
-  let stockClass; // CSS-klasse til lagerstatus
-  if (product.inStock) {
-    // hvis produktet er på lager
-    stockText = "På lager";
-    stockClass = "in-stock";
-  } else {
-    // hvis produktet er udsolgt
-    stockText = "Udsolgt";
-    stockClass = "out-of-stock";
-  }
-
   const stock = getStockStatus(product.inStock);
 
   // lav HTML
@@ -131,7 +118,7 @@ function displayProduct(product) {
         product.description}
       </p>
       <p class="product-price">$${product.price}</p>
-      <span class="product-stock ${stockClass}">${stockText}</span>
+      <span class="product-stock ${stock.class}">${stock.text}</span>
     </div>
   </article>
   `;
