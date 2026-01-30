@@ -142,3 +142,22 @@ console.log(testProduct.description.substring(0, 60));
 const excerpt = testProduct.description.substring(0, 60);
 console.log(excerpt);
 
+// Traditionel
+function add(a, b) {
+  return a + b;
+}
+console.log(add(5, 3));
+
+// Arrow function
+const addArrow = (a, b) => a + b;
+console.log(addArrow(5, 3));
+
+// Traditionel
+function square(x) {
+  return x * x;
+}
+console.log(square(4));
+
+// Arrow function (kort syntaks)
+const squareArrow = x => x * x; // Parenteser kan droppes ved ét parameter
+console.log(squareArrow(4));
